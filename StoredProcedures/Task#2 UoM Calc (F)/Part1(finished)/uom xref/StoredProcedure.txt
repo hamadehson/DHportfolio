@@ -1,0 +1,47 @@
+Dim cmd As ADODB.Command
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = CurrentProject.Connection
+    cmd.CommandText = "PutNewVersion"
+    cmd.CommandType = adCmdStoredProc
+
+    Dim p1 As ADODB.Parameter
+    Set p1 = New ADODB.Parameter
+    p1.Name = "@versionMajor"
+    p1.Type = adInteger
+    p1.Value = CInt(txtversionMajor)
+    cmd.Parameters.Append p1
+
+    Set p1 = New ADODB.Parameter
+    p1.Name = "@VersionInter"
+    p1.Type = adInteger
+    p1.Value = CInt(txtVersionInter)
+    cmd.Parameters.Append p1
+
+    Set p1 = New ADODB.Parameter
+    p1.Name = "@VersionMinor"
+    p1.Type = adInteger
+    p1.Value = CInt(txtVersionMinor)
+    cmd.Parameters.Append p1
+
+    Set p1 = New ADODB.Parameter
+    p1.Name = "@UpdDate"
+    p1.Type = adDBDate
+    p1.Size = 50
+    p1.Value = txtNewDate
+    cmd.Parameters.Append p1
+
+    Set p1 = New ADODB.Parameter
+    p1.Name = "@username"
+    p1.Type = adVarWChar
+    p1.Size = 50
+    p1.Value = txtNewName
+    cmd.Parameters.Append p1
+
+    Set p1 = New ADODB.Parameter
+    p1.Name = "@usercomments"
+    p1.Type = adLongVarWChar
+    p1.Size = -1
+    p1.Value = NewComments
+    cmd.Parameters.Append p1
+
+    cmd.Execute
