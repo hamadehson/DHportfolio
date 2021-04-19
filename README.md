@@ -21,4 +21,4 @@ Contains a .sln file so that the project may be opened in Visual Studio once unz
 
 
 School Work (Work in progress) - 
-Contains various assignments completed during my time at the University of Michigan-Dearborn. Assignments include pieces of code, documentation and built programs. This section is currently a work in progress and more will be uploaded.
+Contains various assignments completed during my time at the University of Michigan-Dearborn. Assignments include pieces of code, documentation and built programs. This section is currently a work in progress and more will be uploaded. (Some assignments were done with other students)
